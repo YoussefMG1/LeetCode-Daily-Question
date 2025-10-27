@@ -8,11 +8,14 @@ class Solution {
             for(int j =0; j<bank1.length(); j++){
                 if(bank1.charAt(j)=='1') numOfDevicesInRow++;
             }
+            
             // if no security devices in the row continue
             if(numOfDevicesInRow == 0) continue;
-            // laser beam between row1 and row2 = n of devices in row1 * n of devices in row2
-            result += row1devices * numOfDevicesInRow;
-            row1devices = numOfDevicesInRow;
+
+            // laser beam between row1 and row2 = n of devices in last row * n of devices in current row
+            result += row1devices * (row1devices = numOfDevicesInRow);
+            // result += row1devices * numOfDevicesInRow;
+            // row1devices = numOfDevicesInRow;
         }
         return result;
     }
