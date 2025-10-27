@@ -2,12 +2,11 @@ class Solution {
     public static  int numberOfBeams(String[] bank) {
         int result =0;
         int row1devices = 0;
-        for(int i=0;i<bank.length;i++){
+        for (String bank1 : bank) {
             // get the number of Devices in the row
             // if no security devices in the row continue
-            int numOfDevicesInRow = StringDegitsSum(bank[i]);
+            int numOfDevicesInRow = StringDegitsSum(bank1);
             if(numOfDevicesInRow == 0) continue;
-
             // laser beam between row1 and row2 = n of devices in row1 * n of devices in row2
             if(row1devices == 0) row1devices = numOfDevicesInRow;
             else {
